@@ -420,6 +420,16 @@ video {
   --white-color: 255, 255, 255;
 }
 
+.dark-theme {
+  --primary-text-color: 200, 203, 231;
+  --secondary-text-color: 77, 80, 103;
+  --assisting-text-color: 91, 94, 126;
+  --selected-text-color: 58, 124, 253;
+  --primary-bg-color: 23, 24, 35;
+  --list-bg-color: 37, 39, 61;
+  --white-color: 255, 255, 255;
+}
+
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
