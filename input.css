@@ -37,3 +37,33 @@ header {
 .dark-theme #light-header {
   display: none;
 }
+
+.dark-theme #light-mode {
+  display: block;
+}
+
+.dark-theme #dark-mode {
+  display: none;
+}
+
+.checkbox {
+  @apply appearance-none mr-2 w-[20px] h-[20px] rounded-full checked:bg-gradient-to-r from-gradientOne to-gradientTwo ring-1 ring-gray-300;
+}
+
+.todo-item {
+  @apply flex flex-row items-center justify-between w-full h-[50px] bg-listBgColor text-base px-4 border-b-[1px] border-[#979797];
+}
+.todo-footer {
+  @apply flex flex-row items-center justify-between w-full h-[50px] bg-listBgColor text-base px-4;
+}
+.todo-footer-menu {
+  @apply flex flex-row items-center justify-center w-full h-[50px] bg-listBgColor text-base px-4 shadow-xl rounded-lg;
+}
+
+.menu .selected {
+  @apply text-selectedTextColor;
+}
+
+/* .checkbox:checked.todo-text {
+  @apply line-through text-secondaryTextColor;
+} */

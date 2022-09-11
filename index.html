@@ -10,10 +10,71 @@
     <link rel="stylesheet" href="css/style.css" />
     <title>Boiler</title>
   </head>
-  <body class="dark-theme bg-primaryBgColor h-screen w-screen">
+  <body class="bg-primaryBgColor h-screen w-screen absolute font-sans">
     <!-- Header Light-->
-    <header id="light-header" class="h-[300px] w-full bg-light-header-bg-mobile md:bg-light-header-bg-desktop"></header>
+    <header id="light-header" class="h-[200px] md:h-[300px] w-full bg-light-header-bg-mobile md:bg-light-header-bg-desktop"></header>
     <!-- Header Dark -->
-    <header id="dark-header" class="hidden h-[300px] w-full bg-dark-header-bg-mobile md:bg-dark-header-bg-desktop"></header>
+    <header id="dark-header" class="hidden h-[200px] md:h-[300px] w-full bg-dark-header-bg-mobile md:bg-dark-header-bg-desktop"></header>
+
+    <!-- List Container -->
+    <div class="container mx-auto px-5 flex flex-col items-start justify-center max-w-[330px] -translate-y-40 md:max-w-[550px]">
+      <!-- Header -->
+      <div class="head-wrapper flex flex-row justify-between w-full mb-4 md:mb-10">
+        <div class="logo">
+          <h1 class="text-whiteColor text-2xl tracking-[.75rem] md:text-3xl">TODO</h1>
+        </div>
+        <div class="toggle cursor-pointer">
+          <img src="/images/icon-moon.svg" alt="Toggle Button" id="dark-mode" />
+          <img src="/images/icon-sun.svg" alt="Toggle Button" id="light-mode" class="hidden" />
+        </div>
+      </div>
+      <!-- Input -->
+      <div class="input-wrapper w-full h-[50px] flex flex-row bg-listBgColor rounded-lg px-4 items-center mb-5">
+        <input type="checkbox" name="check" id="check" class="checkbox" disabled />
+        <input type="text" name="todo" id="todo" placeholder="Create a new todo..." class="w-full h-full rounded-lg bg-transparent text-base text-primaryTextColor p-1 focus:outline-none" />
+      </div>
+
+      <!-- List Wrapper-->
+      <div class="list-wrapper w-full bg-listBgColor rounded-lg overflow-hidden shadow-lg mb-10">
+        <!-- List -->
+        <ul id="todo-list">
+          <!-- List Item -->
+          <li class="todo-item">
+            <div class="flex flex-row items-center">
+              <input type="checkbox" name="check" id="check" class="checkbox" />
+              <p class="text-base text-primaryTextColor todo-text">Complete this project</p>
+            </div>
+            <img src="/images/icon-cross.svg" alt="Delete Icon" class="cursor-pointer delete-btn" />
+          </li>
+          <!-- ToDo Footer -->
+          <li class="todo-footer">
+            <div class="text-secondaryTextColor">
+              <p><span>5</span> items left</p>
+            </div>
+            <div class="menu space-x-4 text-secondaryTextColor hidden md:block">
+              <button id="all-btn" class="selected hover:text-assistingTextColor">All</button>
+              <button id="active-btn" class="hover:text-assistingTextColor">Active</button>
+              <button id="completed-btn" class="hover:text-assistingTextColor">Completed</button>
+            </div>
+            <div class="clear text-secondaryTextColor hover:text-assistingTextColor">
+              <button id="clear-btn">Clear Completed</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <!-- list foot for desktop -->
+      <div class="todo-footer-menu md:hidden mb-10">
+        <div class="menu space-x-4 text-secondaryTextColor">
+          <button id="all-btn" class="selected hover:text-assistingTextColor">All</button>
+          <button id="active-btn" class="hover:text-assistingTextColor">Active</button>
+          <button id="completed-btn" class="hover:text-assistingTextColor">Completed</button>
+        </div>
+      </div>
+
+      <!-- Instructions -->
+      <div class="flex items-center justify-center w-full">
+        <p class="text-sm text-secondaryTextColor">Drag and drop to reorder list</p>
+      </div>
+    </div>
   </body>
 </html>

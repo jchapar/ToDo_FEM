@@ -11,6 +11,8 @@ module.exports = {
         primaryBgColor: 'rgb(var(--primary-bg-color))',
         listBgColor: 'rgb(var(--list-bg-color))',
         whiteColor: 'rgb(var(--white-color))',
+        gradientOne: 'hsl(192, 100%, 67%)',
+        gradientTwo: 'hsl(280, 87%, 65%)',
       },
       fontFamily: {
         sans: ['Josefin Sans', 'sans-serif'],
