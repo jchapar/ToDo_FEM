@@ -23,3 +23,17 @@
     --white-color: 255, 255, 255;
   }
 }
+
+header {
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: contain;
+}
+
+.dark-theme #dark-header {
+  display: block;
+}
+
+.dark-theme #light-header {
+  display: none;
+}

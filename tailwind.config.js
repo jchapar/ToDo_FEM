@@ -15,6 +15,12 @@ module.exports = {
       fontFamily: {
         sans: ['Josefin Sans', 'sans-serif'],
       },
+      backgroundImage: {
+        'light-header-bg-mobile': "url('/images/bg-mobile-light.jpg')",
+        'dark-header-bg-mobile': "url('/images/bg-mobile-dark.jpg')",
+        'light-header-bg-desktop': "url('/images/bg-desktop-light.jpg')",
+        'dark-header-bg-desktop': "url('/images/bg-desktop-dark.jpg')",
+      },
     },
   },
   plugins: [],
