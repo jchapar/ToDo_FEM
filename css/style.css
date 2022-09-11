@@ -42,7 +42,7 @@ html {
   -o-tab-size: 4;
      tab-size: 4;
   /* 3 */
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: Josefin Sans, sans-serif;
   /* 4 */
 }
 
@@ -410,6 +410,26 @@ video {
   height: auto;
 }
 
+:root {
+  --primary-text-color: 73, 76, 107;
+  --secondary-text-color: 209, 210, 218;
+  --assisting-text-color: 148, 149, 165;
+  --selected-text-color: 58, 124, 253;
+  --primary-bg-color: 250, 250, 250;
+  --list-bg-color: 255, 255, 255;
+  --white-color: 255, 255, 255;
+}
+
+.dark-theme {
+  --primary-text-color: 200, 203, 231;
+  --secondary-text-color: 77, 80, 103;
+  --assisting-text-color: 91, 94, 126;
+  --selected-text-color: 58, 124, 253;
+  --primary-bg-color: 23, 24, 35;
+  --list-bg-color: 37, 39, 61;
+  --white-color: 255, 255, 255;
+}
+
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -590,17 +610,10 @@ video {
   margin-right: auto;
 }
 
-.bg-red-900 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(127 29 29 / var(--tw-bg-opacity));
+.h-screen {
+  height: 100vh;
 }
 
-.bg-blue-900 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(30 58 138 / var(--tw-bg-opacity));
-}
-
-.bg-slate-800 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(30 41 59 / var(--tw-bg-opacity));
+.bg-primaryBgColor {
+  background-color: rgb(var(--primary-bg-color));
 }
