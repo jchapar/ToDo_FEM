@@ -64,6 +64,6 @@ header {
   @apply text-selectedTextColor;
 }
 
-/* .checkbox:checked.todo-text {
+.completed {
   @apply line-through text-secondaryTextColor;
-} */
+}

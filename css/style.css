@@ -883,9 +883,11 @@ header {
   color: rgb(var(--selected-text-color));
 }
 
-/* .checkbox:checked.todo-text {
-  @apply line-through text-secondaryTextColor;
-} */
+.completed {
+  color: rgb(var(--secondary-text-color));
+  -webkit-text-decoration-line: line-through;
+          text-decoration-line: line-through;
+}
 
 .hover\:text-assistingTextColor:hover {
   color: rgb(var(--assisting-text-color));

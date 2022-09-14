@@ -47,6 +47,13 @@ UI.prototype.removeToDo = function (e) {
   }
 };
 
+// Add complete class
+UI.prototype.completed = function (e) {
+  if (e.target.classList.contains('checkbox')) {
+    e.target.nextElementSibling.classList.toggle('completed');
+  }
+};
+
 // Event Listeners =============================
 // Get todo input field
 const todoInput = document.getElementById('todo');
@@ -83,4 +90,12 @@ document.querySelector('#todo-list').addEventListener('click', function (e) {
   const ui = new UI();
 
   ui.removeToDo(e);
+});
+
+// Mark complete
+document.querySelector('#todo-list').addEventListener('click', function (e) {
+  // Instantiate UI
+  const ui = new UI();
+
+  ui.completed(e);
 });
