@@ -24,8 +24,18 @@ UI.prototype.addTodoToList = function (todo) {
   `;
   // Append to the list
   list.appendChild(li);
+};
 
-  console.log(list);
+// Update to do count
+UI.prototype.updateCount = function () {
+  // Get to do list
+  const list = document.getElementById('todo-list');
+  // Confirm the number of to dos within the list
+  let countTotal = list.childElementCount;
+  // Get the count el
+  const count = document.querySelector('#count');
+  // Set count el to the number of to dos within the list
+  count.innerText = countTotal;
 };
 
 // Clear Fields
@@ -71,6 +81,9 @@ todoInput.addEventListener('change', () => {
   // Add item to list
   ui.addTodoToList(todo);
 
+  // Update count
+  ui.updateCount();
+
   // Clear Input field
   ui.clearFields();
 });
@@ -89,7 +102,11 @@ document.querySelector('#todo-list').addEventListener('click', function (e) {
   // Instantiate UI
   const ui = new UI();
 
+  // Remove todo
   ui.removeToDo(e);
+
+  // Update count
+  ui.updateCount();
 });
 
 // Mark complete
