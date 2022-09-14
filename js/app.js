@@ -1,11 +1,3 @@
-// const body = document.querySelector('body');
-// const toggleBtn = document.querySelector('.toggle');
-// const todoInput = document.getElementById('todo');
-
-// toggleBtn.addEventListener('click', () => {
-//   body.classList.toggle('dark-theme');
-// });
-
 // Todo Constructor
 function Todo(item) {
   this.item = item;
@@ -32,6 +24,8 @@ UI.prototype.addTodoToList = function (todo) {
   `;
   // Append to the list
   list.appendChild(li);
+
+  console.log(list);
 };
 
 // Clear Fields
@@ -44,7 +38,16 @@ UI.prototype.toggleTheme = function () {
   document.querySelector('body').classList.toggle('dark-theme');
 };
 
-// Event Listeners ==================================
+// Remove To do
+UI.prototype.removeToDo = function (e) {
+  if (e.target.classList.contains('delete-btn')) {
+    if (confirm('Are you sure?')) {
+      e.target.parentElement.remove();
+    }
+  }
+};
+
+// Event Listeners =============================
 // Get todo input field
 const todoInput = document.getElementById('todo');
 
@@ -65,10 +68,19 @@ todoInput.addEventListener('change', () => {
   ui.clearFields();
 });
 
+// Theme toggle event
 document.querySelector('.toggle').addEventListener('click', () => {
   // Instantiate UI
   const ui = new UI();
 
   // Toggle Dark mode
   ui.toggleTheme();
+});
+
+// Delete To Do
+document.querySelector('#todo-list').addEventListener('click', function (e) {
+  // Instantiate UI
+  const ui = new UI();
+
+  ui.removeToDo(e);
 });
