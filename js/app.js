@@ -57,6 +57,18 @@ UI.prototype.removeToDo = function (e) {
   }
 };
 
+// Clear all completed to dos
+UI.prototype.clearCompleted = function () {
+  // Get to do list
+  const list = document.getElementById('todo-list');
+
+  const children = list.querySelectorAll('.completed');
+
+  for (let i = 0; i < children.length; i++) {
+    children[i].parentElement.parentElement.remove();
+  }
+};
+
 // Add complete class
 UI.prototype.completed = function (e) {
   if (e.target.classList.contains('checkbox')) {
@@ -109,10 +121,23 @@ document.querySelector('#todo-list').addEventListener('click', function (e) {
   ui.updateCount();
 });
 
+// Delete all completed
+document.querySelector('#clear-btn').addEventListener('click', function () {
+  // Instantiate UI
+  const ui = new UI();
+
+  // Clear all completed to dos
+  ui.clearCompleted();
+
+  // Update count
+  ui.updateCount();
+});
+
 // Mark complete
 document.querySelector('#todo-list').addEventListener('click', function (e) {
   // Instantiate UI
   const ui = new UI();
 
+  // Mark to do as completed
   ui.completed(e);
 });
