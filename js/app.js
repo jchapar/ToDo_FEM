@@ -73,7 +73,22 @@ UI.prototype.clearCompleted = function () {
 UI.prototype.completed = function (e) {
   if (e.target.classList.contains('checkbox')) {
     e.target.nextElementSibling.classList.toggle('completed');
+    e.target.parentElement.parentElement.classList.toggle('completed');
   }
+};
+
+// Filter completed items
+UI.prototype.filterCompleted = function () {
+  // Get to do list
+  const list = document.getElementById('todo-list');
+
+  list.querySelectorAll('.todo-item').forEach(function (todo) {
+    if (todo.classList.contains('completed')) {
+      todo.style.display = 'flex';
+    } else {
+      todo.style.display = 'none';
+    }
+  });
 };
 
 // Event Listeners =============================
@@ -140,4 +155,12 @@ document.querySelector('#todo-list').addEventListener('click', function (e) {
 
   // Mark to do as completed
   ui.completed(e);
+});
+
+// Filter completed items
+document.querySelector('#completed-btn').addEventListener('click', function () {
+  // Instantiate UI
+  const ui = new UI();
+
+  ui.filterCompleted();
 });
