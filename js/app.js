@@ -79,6 +79,14 @@ UI.prototype.completed = function (e) {
 
 // Filter completed items
 UI.prototype.filterCompleted = function () {
+  const activeBtn = document.querySelector('#active-btn');
+  const allBtn = document.querySelector('#all-btn');
+  const completedBtn = document.querySelector('#completed-btn');
+
+  activeBtn.classList.remove('selected');
+  completedBtn.classList.remove('text-secondaryTextColor');
+  allBtn.classList.remove('selected');
+  completedBtn.classList.add('selected');
   // Get to do list
   const list = document.getElementById('todo-list');
 
@@ -88,6 +96,46 @@ UI.prototype.filterCompleted = function () {
     } else {
       todo.style.display = 'none';
     }
+  });
+};
+
+// Filter active items
+UI.prototype.filterActive = function () {
+  const activeBtn = document.querySelector('#active-btn');
+  const allBtn = document.querySelector('#all-btn');
+  const completedBtn = document.querySelector('#completed-btn');
+
+  activeBtn.classList.toggle('selected');
+  activeBtn.classList.remove('text-secondaryTextColor');
+  allBtn.classList.remove('selected');
+  completedBtn.classList.remove('selected');
+  // Get to do list
+  const list = document.getElementById('todo-list');
+
+  list.querySelectorAll('.todo-item').forEach(function (todo) {
+    if (todo.classList.contains('completed')) {
+      todo.style.display = 'none';
+    } else {
+      todo.style.display = 'flex';
+    }
+  });
+};
+
+// Filter all items
+UI.prototype.allToDos = function () {
+  const activeBtn = document.querySelector('#active-btn');
+  const allBtn = document.querySelector('#all-btn');
+  const completedBtn = document.querySelector('#completed-btn');
+
+  activeBtn.classList.remove('selected');
+  allBtn.classList.remove('text-secondaryTextColor');
+  allBtn.classList.add('selected');
+  completedBtn.classList.remove('selected');
+  // Get to do list
+  const list = document.getElementById('todo-list');
+
+  list.querySelectorAll('.todo-item').forEach(function (todo) {
+    todo.style.display = 'flex';
   });
 };
 
@@ -163,4 +211,20 @@ document.querySelector('#completed-btn').addEventListener('click', function () {
   const ui = new UI();
 
   ui.filterCompleted();
+});
+
+// Filter active items
+document.querySelector('#active-btn').addEventListener('click', function () {
+  // Instantiate UI
+  const ui = new UI();
+
+  ui.filterActive();
+});
+
+// Filter all items
+document.querySelector('#all-btn').addEventListener('click', function () {
+  // Instantiate UI
+  const ui = new UI();
+
+  ui.allToDos();
 });
