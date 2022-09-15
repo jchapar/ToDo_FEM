@@ -65,7 +65,7 @@ UI.prototype.clearCompleted = function () {
   const children = list.querySelectorAll('.completed');
 
   for (let i = 0; i < children.length; i++) {
-    children[i].parentElement.parentElement.remove();
+    children[i].remove();
   }
 };
 
