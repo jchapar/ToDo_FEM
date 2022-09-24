@@ -13,12 +13,12 @@
   </head>
   <body class="bg-primaryBgColor h-screen w-screen absolute font-sans dark-theme">
     <!-- Header Light-->
-    <header id="light-header" class="h-[200px] md:h-[300px] w-full bg-light-header-bg-mobile md:bg-light-header-bg-desktop"></header>
+    <header role="header-light" id="light-header" class="h-[200px] md:h-[300px] w-full bg-light-header-bg-mobile md:bg-light-header-bg-desktop"></header>
     <!-- Header Dark -->
-    <header id="dark-header" class="hidden h-[200px] md:h-[300px] w-full bg-dark-header-bg-mobile md:bg-dark-header-bg-desktop"></header>
+    <header role="header-dark" id="dark-header" class="hidden h-[200px] md:h-[300px] w-full bg-dark-header-bg-mobile md:bg-dark-header-bg-desktop"></header>
 
     <!-- List Container -->
-    <div class="container mx-auto px-5 flex flex-col items-start justify-center max-w-[330px] -translate-y-40 md:max-w-[550px]">
+    <main role="main" class="container mx-auto px-5 flex flex-col items-start justify-center max-w-[330px] -translate-y-40 md:max-w-[550px]">
       <!-- Header -->
       <div class="head-wrapper flex flex-row justify-between w-full mb-4 md:mb-10">
         <div class="logo">
@@ -49,7 +49,7 @@
           </li> -->
         </ul>
         <!-- ToDo Footer -->
-        <div class="todo-footer">
+        <div role="footer-mobile" class="todo-footer">
           <div class="text-secondaryTextColor">
             <p><span id="count">0</span> items left</p>
           </div>
@@ -64,7 +64,7 @@
         </div>
       </div>
       <!-- list foot for desktop -->
-      <div class="todo-footer-menu md:hidden mb-10">
+      <div role="footer-dekstop" class="todo-footer-menu md:hidden mb-10">
         <div class="menu space-x-4">
           <button id="all-btn" class="selected hover:text-assistingTextColor">All</button>
           <button id="active-btn" class="text-secondaryTextColor hover:text-assistingTextColor">Active</button>
@@ -76,6 +76,6 @@
       <!-- <div class="flex items-center justify-center w-full">
         <p class="text-sm text-secondaryTextColor">Drag and drop to reorder list</p>
       </div> -->
-    </div>
+    </main>
   </body>
 </html>
