@@ -20,7 +20,7 @@ UI.prototype.addTodoToList = function (todo) {
     <input type="checkbox" name="check" id="check" class="checkbox" />
     <p class="text-base text-primaryTextColor todo-text">${todo.item}</p>
   </div>
-  <img src="../images/icon-cross.svg" alt="Delete Icon" class="cursor-pointer delete-btn" />
+  <img src="./images/icon-cross.svg" alt="Delete Icon" class="cursor-pointer delete-btn" />
   `;
   // Append to the list
   list.appendChild(li);
