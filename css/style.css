@@ -722,11 +722,11 @@ video {
 }
 
 .bg-light-header-bg-mobile {
-  background-image: url('/images/bg-mobile-light.jpg');
+  background-image: url('./images/bg-mobile-light.jpg');
 }
 
 .bg-dark-header-bg-mobile {
-  background-image: url('/images/bg-mobile-dark.jpg');
+  background-image: url('./images/bg-mobile-dark.jpg');
 }
 
 .p-1 {
@@ -920,11 +920,11 @@ header {
   }
 
   .md\:bg-light-header-bg-desktop {
-    background-image: url('/images/bg-desktop-light.jpg');
+    background-image: url('./images/bg-desktop-light.jpg');
   }
 
   .md\:bg-dark-header-bg-desktop {
-    background-image: url('/images/bg-desktop-dark.jpg');
+    background-image: url('./images/bg-desktop-dark.jpg');
   }
 
   .md\:text-3xl {
